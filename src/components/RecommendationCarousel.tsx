@@ -1,4 +1,3 @@
-import Config from "@/config";
 import { IMovieDetail } from "@/types/IMovieDetail";
 import Image from "next/image";
 import Link from "next/link";

@@ -11,8 +11,7 @@ import Pagination from "@/components/Pagination";
 const MyFavoritesPage = () => {
   const { guestSessionId } = useGuestSession();
   const [loading, setLoading] = useState<boolean>(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [movies, setMovies] = useState<IMovieDetail[]>([]); 
+  const [movies, setMovies] = useState<IMovieDetail[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
 
@@ -49,9 +48,9 @@ const MyFavoritesPage = () => {
 
       {movies.length === 0 && (
         <div className="text-center mt-20 text-gray-600">
-          <p className="text-xl">You don't have any favorite movies yet.</p>
+          <p className="text-xl">You don&apos;t have any favorite movies yet.</p>
           <p className="text-sm mt-2">
-            Go to a movie's detail page and click "Add to Favorites" to see it here.
+            Go to a movie&apos;s detail page and click &quot;Add to Favorites&quot; to see it here.
           </p>
         </div>
       )}

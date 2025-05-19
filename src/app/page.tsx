@@ -20,7 +20,6 @@ export default function Home() {
   const [directors, setDirectors] = useState<Director[]>([]);
   const [topRatedMovies, setTopRatedMovies] = useState<IMovieDetail[]>([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState<IMovieDetail[]>([]);
-  const [loading, setLoading] = useState(true);
 
   const directorNames = [
     "Celine Song",
@@ -32,7 +31,6 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
         // Fetch directors
         const directorsData = await Promise.all(
           directorNames.map(async (name) => {
@@ -59,30 +57,10 @@ export default function Home() {
       catch (error) {
         console.error("Error fetching data:", error);
       } 
-      finally {
-        setLoading(false);
-      }
     };
 
     fetchData();
-  }, []);
-
-  const MovieCard = ({ movie }: { movie: IMovieDetail }) => (
-    <div className="bg-white rounded-lg shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-      <div className="relative h-64">
-        <Image
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-lg mb-1 line-clamp-1">{movie.title}</h3>
-        <p className="text-sm text-purple-600">Rating: {movie.vote_average.toFixed(1)}</p>
-      </div>
-    </div>
-  );
+  }, [directorNames]);
 
   return (
     <div className="min-h-screen">
