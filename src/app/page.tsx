@@ -80,13 +80,13 @@ export default function Home() {
             
             <div className="flex justify-center items-center gap-6 mt-12">
               <Link 
-                href="/popular" 
+                href={"/popular"}
                 className="bg-purple-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Explore Movies
               </Link>
               <Link
-                href="/my-favs" 
+                href={"/my-favs"}
                 className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg border-2 border-purple-600"
               >
                 My Favorites
