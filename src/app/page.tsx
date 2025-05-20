@@ -60,7 +60,8 @@ export default function Home() {
     };
 
     fetchData();
-  }, [directorNames]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, []);
 
   return (
     <div className="min-h-screen">
